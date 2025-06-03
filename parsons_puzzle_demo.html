@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Parsons Puzzle Demo</title>
+  <script src="https://codio.github.io/parsons-puzzle-ui/dist/parsons.js"></script>
+  <link rel="stylesheet" href="https://codio.github.io/parsons-puzzle-ui/dist/parsons.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 1rem;
+    }
+    #parsons-container {
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <h1>Parsons Puzzle: Print Numbers</h1>
+  <p>Arrange the lines of code to print the numbers 0 to 4, then print "Done".</p>
+  <div id="parsons-container"></div>
+
+  <script>
+    const parson = new ParsonsWidget({
+      sortableId: 'parsons-container',
+      codeLines: [
+        'for i in range(5):',
+        '    print(i)',
+        'print("Done") #distractor'
+      ],
+      can_indent: true
+    });
+    parson.init();
+    parson.shuffleLines();
+  </script>
+</body>
+</html>
